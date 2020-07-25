@@ -1,0 +1,44 @@
+//dziele przez dwa i kazda nastepna nieusunieta liczbe az do pierwiastka z n
+
+#include <iostream>
+#include <vector>
+
+
+void fill(std::vector<int>& v, const int& a) {
+	for (int i = 0; i < a-1; ++i) {
+		v.push_back(i+2);
+	}
+}
+
+std::ostream& operator<<(std::ostream& s, const std::vector<int>& a) {
+	int temp = a.size();
+	for (int i = 0; i < temp; ++i) {
+		s << a.at(i) << ' ';
+	}
+	return s;
+}
+void sieve(std::vector<int>& v, const int& n) {
+	int factor = 2;
+	for (int i = 0; i < n; ++i) {
+		if (v.at(i) % factor == 0) {
+			v.erase(i);		//wywala mi tu blad
+		}
+	}
+}
+
+int main() {
+	auto n = 0, number = 0;
+	std::vector<int> v;
+	std::cout << "Place your number up to which you want to find primes" << std::endl;
+	std::cin >> n;
+	v.reserve(n);
+	if (n < 1) {
+		std::cout << "Number must be greater than 1" << std::endl;
+	}
+	else {
+		fill(v, n);
+		std::cout << v;
+	}
+	//std::cout << number;
+	return 0;
+}
