@@ -1,0 +1,24 @@
+#include <iostream>
+
+int main() {
+	auto n = 0, number = 0;
+	std::cout << "Place your number" << std::endl;
+	std::cin >> n;
+	if (n < 1) {
+		std::cout << "Number must be greater than 1" << std::endl;
+	}
+	else {
+		while (n != 1) {
+			if (n % 2) {
+				n /= 2;
+				number++;
+			}
+			else {
+				n = 3 * n + 1;
+				number++;
+			}
+		}
+	}
+	std::cout << number;
+	return 0;
+}
