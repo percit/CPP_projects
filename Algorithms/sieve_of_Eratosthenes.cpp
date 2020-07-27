@@ -5,8 +5,8 @@
 
 
 void fill(std::vector<int>& v, const int& a) {
-	for (int i = 0; i < a-1; ++i) {		//cause it only have to give value up to 'a'
-		v.push_back(i+2);				//cause we only need values 2 and bigger
+	for (int i = 0; i < a - 1; ++i) {		//cause it only have to give value up to 'a'
+		v.push_back(i + 2);				//cause we only need values 2 and bigger
 	}
 }
 
@@ -23,20 +23,22 @@ void sieve(std::vector<int>& v, const int& n) {
 	//int temp = v.size();
 	int i = 1;
 	try {
-		while (factor != sqrt(n)) {	//to the sqrt, because it is so in this sieve, for example max for n = 100, 
+		while (factor != sqrt(n) && place != v.size()) {	//to the sqrt, because it is so in this sieve, for example max for n = 100, 
 						//then if we give 11 > sqrt(100) it only would change 121 or greater
-			for (i; i < v.size(); i++) {
-				if (v.at(i) % factor == 0) {//out of range exception, haven't resolved it
-					v.erase(v.begin() + i);	//I delete everything that is divisible with this factor
-					//--i;					//if I delete sth, then the place of next value moves
+
+				for (i; i < v.size(); i++) {
+					if (v.at(i) % factor == 0) {//out of range exception, haven't resolved it
+						v.erase(v.begin() + i);	//I delete everything that is divisible with this factor
+						//--i;					//if I delete sth, then the place of next value moves
+					}
 				}
-			}
-			factor = v.at(place);			//here I change the factor and then it goes into loop again
-			place++;						//this will change the place for the next for loop
-			i = place;
+				factor = v.at(place);			//here I change the factor and then it goes into loop again
+				place++;						//this will change the place for the next for loop
+				i = place;
+			
 		}
 	}
-   	catch (const std::out_of_range& oor) {
+	catch (const std::out_of_range & oor) {
 		std::cerr << "Out of Range error: " << oor.what() << ' ' << i << '\n';
 	}
 }
@@ -53,7 +55,7 @@ int main() {
 	else {
 		fill(v, n);
 		sieve(v, n);
-		std::cout << v;
+		std::cout << "All primes are: "<< v;
 	}
 	return 0;
 }
