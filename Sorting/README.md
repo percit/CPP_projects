@@ -8,7 +8,7 @@ For now just use header.h and file with sorting method you want.
 
 ## Future changes
 
-Changing it into one big program that would ask which sort to perform.
+Merging it into one big program that would ask which sort to perform.
 
 Using templates instead of just integers.
 
