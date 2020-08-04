@@ -10,9 +10,9 @@ For now just use header.h and file with sorting method you want.
 
 Merging it into one big program that would ask which sort to perform.
 
-Using templates instead of just integers.
+Using templates instead of simple integers.
 
-Adding times function to analyse which is fastest for given vector
+Adding timer function to analyse which is fastest for given vector
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
