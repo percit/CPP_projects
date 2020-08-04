@@ -10,7 +10,7 @@ For now just use header.h and file with sorting method you want.
 
 Changing it into one big program that would ask which sort to perform.
 
-Using std::vector<T> instead of just std::vector<int>.
+Using templates instead of just integers.
 
 Adding times function to analyse which is fastest for given vector
 
