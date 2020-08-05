@@ -4,7 +4,7 @@ These are little simple sorting methods for std::vector. Mostly for learning C++
 
 ## Usage
 
-For now just use header.h and file with sorting method you want. 
+For now just use header.h and file with sorting method you want. In Sorter just call the function with adequate arguments, will be changed soon
 
 ## Future changes
 
