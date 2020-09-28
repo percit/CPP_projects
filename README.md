@@ -20,7 +20,7 @@ next prime number
 prime factorization
 
 ## Sorting
-insertion sort
+most popular sorts
 
 ## Text
 palindrome
