@@ -2,15 +2,17 @@
 class baseClass
 {
 private:
-    /* data */
+    std::string Name;
 public:
     baseClass(/* args */) {}
     ~baseClass() {}
+    virtual  std::string getName() = 0; //tworzymy interfers, czyli pusta wirtualna funkcje
 };
 class myClass: public baseClass
 {
 private:
     int a = 0, b = 2;
+    std::string Name;
 public:
     myClass
 (int k, int j): a(k), b(j) {}
@@ -18,6 +20,7 @@ public:
 () {}
     int getA();
     void setA(int);
+    std::string getName() override {return Name;}
 };
 int myClass::getA(){
     return a;
