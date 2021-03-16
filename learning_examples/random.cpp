@@ -33,6 +33,19 @@ i trzeba uzywac normalnych inicjalizacji tak jak pan bog nakazal
 /**/
 /**/
 
+1
+2
+3
+4
+5
+6
+7
+int max(int x, int y) 
+{
+    int max{ (x > y) ? x : y }; // tak latwo mozemy sprawdzic co jest wieksze
+ 
+    return max;
+} 
 int main(){
 
     return 0;
