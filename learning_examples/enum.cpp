@@ -10,5 +10,22 @@ enum Color
     color_magenta // assigned 7
 };
  
-Color paint{ color_white };
+Color paint = color_white;
 std::cout << paint;
+
+
+
+//zeby nie dalo sie porownac enumow typu color_red = banana to uzywamy enum class
+
+enum class Color // "enum class" defines this as a scoped enumeration instead of a standard enumeration
+    {
+        red, // red is inside the scope of Color
+        blue
+    };
+ 
+enum class Fruit
+    {
+        banana, // banana is inside the scope of Fruit
+        apple
+    };
+Color color = Color::red;
