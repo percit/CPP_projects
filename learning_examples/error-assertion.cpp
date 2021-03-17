@@ -2,6 +2,11 @@
 #include <cmath> // for std::sqrt
 #include <iostream>
  
+
+
+//static_assert(condition, diagnostic_message)  mozna jeszcze tak zrobic, pamietaj ze to nie jest error handling, tylko rzecz do debugowania bardziej
+
+
 double calculateTimeUntilObjectHitsGround(double initialHeight, double gravity)
 {
   assert(gravity > 0.0); // The object won't reach the ground unless there is positive gravity.
