@@ -30,16 +30,9 @@ ze lvalue to cos czemu mozna przypisac wartosc, a rvalue juz nie
 jak damy “explicit” przed konstruktorem to nie pozwoli na zadne niejawne konwersje 
 i trzeba uzywac normalnych inicjalizacji tak jak pan bog nakazal
 */
-/**/
-/**/
 
-1
-2
-3
-4
-5
-6
-7
+//podczas drukowanie czegos na konsole(i tylko do tego) uzywaj std::stringview, zamiast std::string, zeby oszczedzic ilosc kopii, ktore robisz
+
 int max(int x, int y) 
 {
     int max{ (x > y) ? x : y }; // tak latwo mozemy sprawdzic co jest wieksze
