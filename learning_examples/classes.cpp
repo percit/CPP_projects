@@ -14,10 +14,8 @@ private:
     int a = 0, b = 2;
     std::string Name;
 public:
-    myClass
-(int k, int j): a(k), b(j) {}
-    ~myClass
-() {}
+    myClass(int k, int j): a(k), b(j) {}
+    ~myClass() {}
     int getA();
     void setA(int);
     std::string getName() override {return Name;}
