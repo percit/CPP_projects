@@ -1,5 +1,20 @@
 //https://leetcode.com/problems/roman-to-integer/submissions/
-int romanToInt(const std::string& data) {
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cctype>
+#include <stdexcept>
+
+std::ostream& operator<<(std::ostream& stream, std::vector<char> v) {
+    for (int i = 0; i < v.size(); ++i) {
+        stream << v.at(i);
+    }
+    return stream;
+}
+
+int romanToInt(std::string s) {
+    std::vector<char> data(s.begin(), s.end());
+    std::cout << data;
     int value = 0;
     int i = 0;
     for (i; i < data.size(); ++i) {
@@ -11,44 +26,46 @@ int romanToInt(const std::string& data) {
                 value += 500;
                 break;
             case 'C':
-                if((i+1) < data.size()) {
-                    if ((data.at(i + 1) == 'D' || data.at(i + 1) == 'M')) {
+                try {
+                    if (data.at(i + 1) == 'D' || data.at(i + 1) == 'M') {
                         value -= 100;
+                    } else {
+                        value += 100;
                     }
-                    else {
-                        value += 1;
-                    }
-                }else {
-                    value += 100;
+                }
+                catch (const std::out_of_range& oor) {
+                    //std::cerr << "out of range" << oor.what() << std::endl;
                 }
                 break;
             case 'L':
                 value += 50;
                 break;
             case 'X':
-                if((i+1) < data.size()) {
+                try {
                     if (data.at(i + 1) == 'L' || data.at(i + 1) == 'C') {
                         value -= 10;
+                    } else {
+                        value += 10;
                     }
-                    else {
-                        value += 1;
-                    }
-                }else {
-                    value += 10;
+                    std::cout << "i: " << i;
+                } catch (const std::out_of_range& oor) {
+                    std::cerr << "out of range" << oor.what() << std::endl;
                 }
                 break;
             case 'V':
                 value += 5;
                 break;
             case 'I':
-                if((i+1) < data.size()) {
+                try {
                     if (data.at(i + 1) == 'V' || data.at(i + 1) == 'X') {
                         value -= 1;
+
                     } else {
                         value += 1;
                     }
-                }else{
-                    value +=1;
+                }
+                catch (const std::out_of_range& oor) {
+                    //std::cerr << "out of range" << oor.what() << std::endl;
                 }
                 break;
             default:
@@ -57,4 +74,10 @@ int romanToInt(const std::string& data) {
     }
 
     return value;
+}
+
+
+int main() {
+    std::cout << romanToInt("IX");
+
 }
