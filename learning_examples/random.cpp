@@ -43,3 +43,7 @@ int main(){
 
     return 0;
 }
+
+
+
+przed malymi funkcjami uzywaj inline
