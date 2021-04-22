@@ -1,4 +1,4 @@
-## minimalny cmake:
+# minimalny cmake:
 
 CMakeLists.txt:
 
@@ -20,13 +20,9 @@ cmake --build
 
 # jak chcemy dodac do kilka plikow do jednej zmiennej to:
 set(SRC 
-
 greeter.cpp
-
  main.cpp
- 
  person.cpp
- 
 )
 
 add_executables(${PROJECT_NAME}  ${SRC})
