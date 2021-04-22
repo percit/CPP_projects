@@ -8,6 +8,7 @@ project(ProjectName)
 
 add_executable(execName main.cpp)
 
+# budowanie
 
 mkdir build
 
@@ -20,9 +21,13 @@ cmake --build
 
 # jak chcemy dodac do kilka plikow do jednej zmiennej to:
 set(SRC 
+
 greeter.cpp
+
  main.cpp
+ 
  person.cpp
+ 
 )
 
 add_executables(${PROJECT_NAME}  ${SRC})
