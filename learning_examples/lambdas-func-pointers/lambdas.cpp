@@ -1,22 +1,4 @@
 
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
 #include <algorithm>
 #include <array>
 #include <iostream>
@@ -28,9 +10,11 @@ int main()
  
   // Define the function right where we use it.
   const auto found{ std::find_if(arr.begin(), arr.end(),
-                       	[](std::string_view str) // here's our lambda, no capture clause, third argument here is function pointer so out lambda
+                       	[](std::string_view str) // here's our lambda, no capture clause, third argument here is 
+                                 //function pointer so out lambda
                        	{
-                         	return (str.find("nut") != std::string_view::npos);//if finds “nut” it gives index, if not, it gives large number
+                         	return (str.find("nut") != std::string_view::npos);//if finds “nut” it gives index,
+                         //if not, it gives large number
                        	}) };
  
   if (found == arr.end())
@@ -53,12 +37,7 @@ return std::all_of(array.begin(), array.end(), [](int i){ return ((i % 2) == 0);
 to jest function literal, ale jest brzydki jak ja
 
 
-2
-3
-4
-5
-6
-7
+
 8
 9
 // Good: Instead, we can store the lambda in a named variable and pass it to the function.
@@ -87,28 +66,6 @@ te wycinki kodu sprawdzaja czy wszelkie elementy tego array’a sa parzyste
 9
 10
 11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
 #include <functional>
  
 int main()
