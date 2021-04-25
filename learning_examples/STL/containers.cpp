@@ -6,7 +6,7 @@
 
 //STRING
 //jak chcemy cos string skopiowac do drugiego to uzywamy 
-//memcpy(ostateczny string, poczatkowy string, rozmiar), albo takie same “strcpy”, ktory ma w sobie \0
+//strcpy(destination string, source string)
 //wstring to taki string, który moze miec w sobie nawet jakies dziwne znaki typu “*&*&&^*” itp
 
 std::array<int, 5> another; //i to dziala jak array, ale ma metody typu size() itp
