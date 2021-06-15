@@ -28,23 +28,3 @@ Example value = b; //gdzie mamy te 3 wartosci 5, 8, 10 i tylko z nich mozemy wyb
 // generalnie to ten enum moze byc zastapiony: “int a = 5, b =8, c = 10;”, ale wyglada to lepiej 
 
 
-int main(){
-  std::vector<int> bar;
-  bar.reserve(100); //reserve space for 100 elements of size(int)
-  bar.emplace_back(1); //lepsze pamieciowo od push_back
-
-    //zeby stworzyc macierz 2d to dajemy:
-int** array1 = new int*[50];
-for(int i = 0; i < 50; ++i){
-    array1[i] = new int[50];
-}
-//ale lepsza opcja jest:
-int* array2 = new int[5*5];
-for(int y = 0; y < 5; y++){
-	for(int x = 0; x < 5; x++){
-		array2[x +y*5] = 2;
-	}
-}
-
-    return 0;
-}
