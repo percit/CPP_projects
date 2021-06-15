@@ -14,7 +14,7 @@
 
 # std::set
 
-A set is a container that stores unique elements, with duplicate elements disallowed. The elements are sorted according to their values.
+usuwa duplikaty i od razu sortuje
 
 # std::multiset
 
