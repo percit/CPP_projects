@@ -6,11 +6,6 @@ std::string name = "Yan Chernikov";
 std::string firstName = name.substr(0,3);
 std::string_view FirstName(name.c_str(), 3);
 
-//jak chcemy sprawdzic gdzie alokuje sie nowa pamiec:
-void* operator new(size_t size){
-    std::cout << "allocating" << size << " bytes" << std::endl;
-    return malloc(size);
-}
 //przeciazenia operatora wyjscia: 
  std::ostream& operator<<(std::ostream& stream, const std::vector<int>& v){
      for(int i = 0; i < v.size(); ++i){
@@ -22,6 +17,7 @@ void* operator new(size_t size){
 /*
 lvalue to a, rvalue to 10 (lvalue left value, rvalue right value), oznacza 
 ze lvalue to cos czemu mozna przypisac wartosc, a rvalue juz nie
+JESLI MA NAZWE, TO ZWYKLE TO JEST LVALUE
 */
 
 /*jak jest jedna funkcja rzadko uzywana, np raz to dajemy przed funkcja “inline”*/
