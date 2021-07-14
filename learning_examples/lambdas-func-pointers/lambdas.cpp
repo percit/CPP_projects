@@ -70,14 +70,17 @@ te wycinki kodu sprawdzaja czy wszelkie elementy tego array’a sa parzyste
  
 int main()
 {
-  // A regular function pointer. Only works with an empty capture clause.
-  double (*addNumbers1)(double, double){
+
+   // Using auto. Stores the lambda with its real type.
+  auto addNumbers3{
     [](double a, double b) {
       return (a + b);
     }
   };
  
-  addNumbers1(1, 2);
+  addNumbers3(5, 6);
+ 
+ 
  
   // Using std::function. The lambda could have a non-empty capture clause (Next lesson).
   std::function addNumbers2{ // note: pre-C++17, use std::function<double(double, double)> instead
@@ -87,15 +90,17 @@ int main()
   };
  
   addNumbers2(3, 4);
+
+
  
-  // Using auto. Stores the lambda with its real type.
-  auto addNumbers3{
+   // A regular function pointer. Only works with an empty capture clause.
+  double (*addNumbers1)(double, double){
     [](double a, double b) {
       return (a + b);
     }
   };
  
-  addNumbers3(5, 6);
+  addNumbers1(1, 2);
  
   return 0;
 }
