@@ -1,3 +1,7 @@
+https://cmake.org/examples/
+
+
+
 # minimalny cmake:
 
 CMakeLists.txt:
