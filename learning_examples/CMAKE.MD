@@ -21,7 +21,7 @@ target_include_directories (Hello PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # sub directory 2
 
-add_executable (helloDemo demo.cxx demo_b.cxx)
+add_executable (helloDemo demo.cxx demo_b.cxx)       Tu chyba by byl main itp
 
 target_link_libraries (helloDemo LINK_PUBLIC Hello)
 
