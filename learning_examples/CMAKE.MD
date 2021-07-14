@@ -1,6 +1,31 @@
 https://cmake.org/examples/
 
 
+# main directory:
+cmake_minimum_required (VERSION 2.8.11)
+
+project (HELLO)
+
+add_subdirectory (Hello)
+
+add_subdirectory (Demo)
+
+# sub directory 1
+
+add_library (Hello hello.cxx)
+
+target_include_directories (Hello PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+
+
+
+# sub directory 2
+
+add_executable (helloDemo demo.cxx demo_b.cxx)
+
+target_link_libraries (helloDemo LINK_PUBLIC Hello)
+
+
 
 # minimalny cmake:
 
